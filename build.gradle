@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'com._2train395.limelight.api'
+version '0.1.0'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven {
+        url 'http://first.wpi.edu/FRC/roborio/maven/release/'
+    }
+}
+
+dependencies {
+    testCompile 'junit:junit:4.12'
+    compile 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
+}
