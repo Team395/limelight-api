@@ -11,15 +11,27 @@ public class BoundingBox {
     private final double horizontalSideLength;
     private final double verticalSideLength;
 
-    private BoundingBox(final double shortestSideLength, final double longestSideLength, final double horizontalSideLength, final double verticalSideLength) {
-        this.shortestSideLength = shortestSideLength;
-        this.longestSideLength = longestSideLength;
-        this.horizontalSideLength = horizontalSideLength;
-        this.verticalSideLength = verticalSideLength;
+    BoundingBox() {
+        shortestSideLength = fetchShortestSideLength();
+        longestSideLength = fetchLongestSideLength();
+        horizontalSideLength = fetchHorizontalSideLength();
+        verticalSideLength = fetchVerticalSideLength();
     }
 
-    protected static BoundingBox get() {
-        return new BoundingBox(Limelight.getTable().getEntry(SHORTEST_SIDE_LENGTH_KEY).getNumber(0.0).doubleValue(), Limelight.getTable().getEntry(LONGEST_SIDE_LENGTH_KEY).getNumber(0.0).doubleValue(), Limelight.getTable().getEntry(HORIZONTAL_SIDE_LENGTH_KEY).getNumber(0.0).doubleValue(), Limelight.getTable().getEntry(VERTICAL_SIDE_LENGTH_KEY).getNumber(0.0).doubleValue());
+    private double fetchShortestSideLength() {
+        return Limelight.getTable().getEntry(SHORTEST_SIDE_LENGTH_KEY).getDouble(0.0);
+    }
+
+    private double fetchLongestSideLength() {
+        return Limelight.getTable().getEntry(LONGEST_SIDE_LENGTH_KEY).getDouble(0.0);
+    }
+
+    private double fetchHorizontalSideLength() {
+        return Limelight.getTable().getEntry(HORIZONTAL_SIDE_LENGTH_KEY).getDouble(0.0);
+    }
+
+    private double fetchVerticalSideLength() {
+        return Limelight.getTable().getEntry(VERTICAL_SIDE_LENGTH_KEY).getDouble(0.0);
     }
 
     public double getShortestSideLength() {

@@ -1,28 +1,58 @@
 package com._2train395.limelight.api;
 
 public class Target {
-    protected static final String X_OFFSET_KEY = "tx";
-    protected static final String Y_OFFSET_KEY = "ty";
-    protected static final String AREA_KEY = "ta";
-    protected static final String SKEW_KEY = "ts";
+    private static final String X_OFFSET_KEY = "tx";
+    private static final String Y_OFFSET_KEY = "ty";
+    private static final String AREA_KEY = "ta";
+    private static final String SKEW_KEY = "ts";
 
-    public static double getXOffset() {
-        return Limelight.getTable().getEntry(X_OFFSET_KEY).getNumber(0.0).doubleValue();
+    private final double xOffset;
+    private final double yOffset;
+    private final double area;
+    private final double skew;
+    private final BoundingBox boundingBox;
+
+    Target() {
+        xOffset = fetchXOffset();
+        yOffset = fetchYOffset();
+        area = fetchArea();
+        skew = fetchSkew();
+        boundingBox = new BoundingBox();
     }
 
-    public static double getYOffset() {
-        return Limelight.getTable().getEntry(Y_OFFSET_KEY).getNumber(0.0).doubleValue();
+    private double fetchXOffset() {
+        return Limelight.getTable().getEntry(X_OFFSET_KEY).getDouble(0.0);
     }
 
-    public static double getArea() {
-        return Limelight.getTable().getEntry(AREA_KEY).getNumber(0.0).doubleValue();
+    private double fetchYOffset() {
+        return Limelight.getTable().getEntry(Y_OFFSET_KEY).getDouble(0.0);
     }
 
-    public static double getSkew() {
-        return Limelight.getTable().getEntry(SKEW_KEY).getNumber(0.0).doubleValue();
+    private double fetchArea() {
+        return Limelight.getTable().getEntry(AREA_KEY).getDouble(0.0);
     }
 
-    public static BoundingBox getBoundingBox() {
-        return BoundingBox.get();
+    private double fetchSkew() {
+        return Limelight.getTable().getEntry(SKEW_KEY).getDouble(0.0);
+    }
+
+    public double getXOffset() {
+        return xOffset;
+    }
+
+    public double getYOffset() {
+        return yOffset;
+    }
+
+    public double getArea() {
+        return area;
+    }
+
+    public double getSkew() {
+        return skew;
+    }
+
+    public BoundingBox getBoundingBox() {
+        return boundingBox;
     }
 }
