@@ -12,7 +12,7 @@ public class Limelight {
         return NetworkTableInstance.getDefault().getTable(KEY);
     }
 
-    public static boolean hasTargets() {
+    public static boolean hasTarget() {
         return getTable().getEntry(HAS_TARGETS_KEY).getDouble(0.0) == 1.0;
     }
 
