@@ -1,2 +1,3 @@
 rootProject.name = 'limelight-api'
 include 'camera'
+include 'target'
