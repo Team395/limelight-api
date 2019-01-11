@@ -1,6 +1,4 @@
-package com._2train395.limelight.api.target;
-
-import com._2train395.limelight.api.Limelight;
+package com._2train395.limelight.api;
 
 public class Target {
     protected static final String X_OFFSET_KEY = "tx";

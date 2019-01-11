@@ -1,6 +1,4 @@
-package com._2train395.limelight.api.camera;
-
-import com._2train395.limelight.api.Limelight;
+package com._2train395.limelight.api;
 
 public class CameraSettings {
     public static LedMode getLedMode() {

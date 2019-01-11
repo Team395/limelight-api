@@ -1,4 +1,4 @@
-package com._2train395.limelight.api.camera;
+package com._2train395.limelight.api;
 
 public enum CameraMode {
     VISION_PROCESSING, DRIVER_CAMERA;
