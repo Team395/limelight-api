@@ -47,6 +47,18 @@ public class Limelight {
         setSnapshotMode(cameraSettings.getSnapshotMode());
     }
 
+    public static Target getTarget() {
+        return new Target();
+    }
+
+    public static RawTarget getRawTarget(final RawTargetType rawTargetType) {
+        return new RawTarget(rawTargetType);
+    }
+
+    public static RawCrosshair getRawCrosshair(final RawCrosshairType rawCrosshairType) {
+        return new RawCrosshair(rawCrosshairType);
+    }
+
     public static boolean hasTarget() {
         return getTable().getEntry(HAS_TARGETS_KEY).getDouble(0.0) == 1.0;
     }
