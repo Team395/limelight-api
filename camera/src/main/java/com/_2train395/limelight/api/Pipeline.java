@@ -2,5 +2,5 @@ package com._2train395.limelight.api;
 
 public enum Pipeline {
     ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE;
-    protected static final String KEY = "pipeline";
+    static final String KEY = "pipeline";
 }
