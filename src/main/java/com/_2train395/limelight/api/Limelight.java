@@ -17,6 +17,6 @@ public class Limelight {
     }
 
     public static double getLatency() {
-        return getTable().getEntry(LATENCY_KEY).getNumber(0.0).doubleValue();
+        return getTable().getEntry(LATENCY_KEY).getDouble(0.0);
     }
 }
