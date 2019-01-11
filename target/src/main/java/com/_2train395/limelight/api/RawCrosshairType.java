@@ -1,8 +1,8 @@
 package com._2train395.limelight.api;
 
 public enum RawCrosshairType {
-    ZERO(0),
-    ONE(1);
+    FIRST(0),
+    SECOND(1);
 
     private String xKey = "cx";
     private String yKey = "cy";
