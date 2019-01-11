@@ -13,7 +13,7 @@ public class Limelight {
     }
 
     public static boolean hasTargets() {
-        return getTable().getEntry(HAS_TARGETS_KEY).getNumber(0).intValue() > 0;
+        return getTable().getEntry(HAS_TARGETS_KEY).getDouble(0.0) == 1.0;
     }
 
     public static double getLatency() {
