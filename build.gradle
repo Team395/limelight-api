@@ -17,7 +17,6 @@ allprojects {
 }
 
 dependencies {
-    testCompile 'junit:junit:4.12'
     compile 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
 }
 
