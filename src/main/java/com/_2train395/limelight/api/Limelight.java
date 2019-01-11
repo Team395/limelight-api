@@ -8,7 +8,7 @@ public class Limelight {
     private static final String HAS_TARGETS_KEY = "tv";
     private static final String LATENCY_KEY = "tl";
 
-    public static NetworkTable getTable() {
+    static NetworkTable getTable() {
         return NetworkTableInstance.getDefault().getTable(KEY);
     }
 
