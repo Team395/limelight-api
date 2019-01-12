@@ -15,23 +15,43 @@ public class Limelight {
         return NetworkTableInstance.getDefault().getTable(KEY);
     }
 
-    private static void setLedMode(final LedMode ledMode) {
+    public static LedMode getLedMode() {
+        return LedMode.fetch();
+    }
+
+    public static void setLedMode(final LedMode ledMode) {
         getTable().getEntry(LedMode.KEY).setNumber(ledMode.ordinal());
     }
 
-    private static void setCameraMode(final CameraMode cameraMode) {
+    public static CameraMode getCameraMode() {
+        return CameraMode.fetch();
+    }
+
+    public static void setCameraMode(final CameraMode cameraMode) {
         getTable().getEntry(CameraMode.KEY).setNumber(cameraMode.ordinal());
     }
 
-    private static void setPipeline(final Pipeline pipeline) {
+    public static Pipeline getPipeline() {
+        return Pipeline.fetch();
+    }
+
+    public static void setPipeline(final Pipeline pipeline) {
         getTable().getEntry(Pipeline.KEY).setNumber(pipeline.ordinal());
     }
 
-    private static void setStreamMode(final StreamMode streamMode) {
+    public static StreamMode getStreamMode() {
+        return StreamMode.fetch();
+    }
+
+    public static void setStreamMode(final StreamMode streamMode) {
         getTable().getEntry(StreamMode.KEY).setNumber(streamMode.ordinal());
     }
 
-    private static void setSnapshotMode(final SnapshotMode snapshotMode) {
+    public static SnapshotMode getSnapshotMode() {
+        return SnapshotMode.fetch();
+    }
+
+    public static void setSnapshotMode(final SnapshotMode snapshotMode) {
         getTable().getEntry(SnapshotMode.KEY).setNumber(snapshotMode.ordinal());
     }
 
