@@ -55,18 +55,6 @@ public class Limelight {
         getTable().getEntry(SnapshotMode.KEY).setNumber(snapshotMode.ordinal());
     }
 
-    public static CameraSettings getCameraSettings() {
-        return new CameraSettings();
-    }
-
-    public static void setCameraSettings(final CameraSettings cameraSettings) {
-        setLedMode(cameraSettings.getLedMode());
-        setCameraMode(cameraSettings.getCameraMode());
-        setPipeline(cameraSettings.getPipeline());
-        setStreamMode(cameraSettings.getStreamMode());
-        setSnapshotMode(cameraSettings.getSnapshotMode());
-    }
-
     public static Target getTarget() {
         return new Target();
     }
