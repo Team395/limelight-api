@@ -20,7 +20,7 @@ public class Limelight {
     }
 
     public static void setLedMode(final LedMode ledMode) {
-        getTable().getEntry(LedMode.KEY).setNumber(ledMode.ordinal());
+        ledMode.push();
     }
 
     public static CameraMode getCameraMode() {
@@ -28,7 +28,7 @@ public class Limelight {
     }
 
     public static void setCameraMode(final CameraMode cameraMode) {
-        getTable().getEntry(CameraMode.KEY).setNumber(cameraMode.ordinal());
+        cameraMode.push();
     }
 
     public static Pipeline getPipeline() {
@@ -36,7 +36,7 @@ public class Limelight {
     }
 
     public static void setPipeline(final Pipeline pipeline) {
-        getTable().getEntry(Pipeline.KEY).setNumber(pipeline.ordinal());
+        pipeline.push();
     }
 
     public static StreamMode getStreamMode() {
@@ -44,7 +44,7 @@ public class Limelight {
     }
 
     public static void setStreamMode(final StreamMode streamMode) {
-        getTable().getEntry(StreamMode.KEY).setNumber(streamMode.ordinal());
+        streamMode.push();
     }
 
     public static SnapshotMode getSnapshotMode() {
@@ -52,7 +52,7 @@ public class Limelight {
     }
 
     public static void setSnapshotMode(final SnapshotMode snapshotMode) {
-        getTable().getEntry(SnapshotMode.KEY).setNumber(snapshotMode.ordinal());
+        snapshotMode.push();
     }
 
     public static Target getTarget() {

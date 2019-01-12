@@ -15,4 +15,8 @@ public enum CameraMode {
     static CameraMode fetch() {
         return values()[(int) Limelight.getTable().getEntry(KEY).getDouble(0.0)];
     }
+
+    void push() {
+        Limelight.getTable().getEntry(KEY).setDouble(index);
+    }
 }
