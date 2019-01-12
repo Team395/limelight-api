@@ -13,6 +13,10 @@ public enum StreamMode {
         this.index = index;
     }
 
+    static StreamMode fetch() {
+        return values()[(int) Limelight.getTable().getEntry(KEY).getDouble(0.0)];
+    }
+
     int getIndex() {
         return index;
     }
