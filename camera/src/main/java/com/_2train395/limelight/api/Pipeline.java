@@ -1,6 +1,6 @@
 package com._2train395.limelight.api;
 
 public enum Pipeline {
-    ZERO, ONE, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE;
+    FIRST, SECOND, THIRD, FOURTH, FIFTH, SIXTH, SEVENTH, EIGHTH, NINTH, TENTH;
     static final String KEY = "pipeline";
 }
