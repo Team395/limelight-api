@@ -3,7 +3,7 @@ plugins {
 }
 
 allprojects {
-    group 'com._2train395.limelight.api'
+    group 'com.2train395.limelight.api'
     version '0.1.0'
 
     sourceCompatibility = 1.8
