@@ -1,7 +1,16 @@
 package com._2train395.limelight.api;
 
+/**
+ * Represents the Limelight's snapshot mode.
+ */
 public enum SnapshotMode {
+    /**
+     * Disables the capturing of snapshots.
+     */
     DISABLED(0),
+    /**
+     * Takes two snapshots per second.
+     */
     TWO_PER_SECOND(1);
 
     static final String KEY = "snapshot";

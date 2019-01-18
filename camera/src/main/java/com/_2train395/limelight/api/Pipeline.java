@@ -1,5 +1,8 @@
 package com._2train395.limelight.api;
 
+/**
+ * Represents a vision processing pipeline on the Limelight.
+ */
 public enum Pipeline {
     FIRST(0),
     SECOND(1),
