@@ -1,5 +1,8 @@
 package com._2train395.limelight.api;
 
+/**
+ * Represents a vision target detected by Limelight through the current pipeline.
+ */
 public class Target {
     private static final String X_OFFSET_KEY = "tx";
     private static final String Y_OFFSET_KEY = "ty";
@@ -36,22 +39,37 @@ public class Target {
         return Limelight.getTable().getEntry(SKEW_KEY).getDouble(0.0);
     }
 
+    /**
+     * @return the horizontal offset from the crosshair to this target, ranging from -27 to 27 degrees
+     */
     public double getXOffset() {
         return xOffset;
     }
 
+    /**
+     * @return the vertical offset from the crosshair to this target, ranging from -20.5 to 20.5 degrees
+     */
     public double getYOffset() {
         return yOffset;
     }
 
+    /**
+     * @return the percentage of the image that this target (enclosed by its {@link BoundingBox}) occupies, ranging from 0% to 100%
+     */
     public double getArea() {
         return area;
     }
 
+    /**
+     * @return the skew of this target, ranging from -90 to 0 degrees
+     */
     public double getSkew() {
         return skew;
     }
 
+    /**
+     * @return this target's {@link BoundingBox}
+     */
     public BoundingBox getBoundingBox() {
         return boundingBox;
     }
