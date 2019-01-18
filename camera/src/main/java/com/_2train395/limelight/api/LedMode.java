@@ -1,7 +1,7 @@
 package com._2train395.limelight.api;
 
 public enum LedMode {
-    OF_CURRENT_PIPELINE(0),
+    USE_CURRENT_PIPELINE(0),
     FORCE_OFF(1),
     FORCE_BLINK(2),
     FORCE_ON(3);
