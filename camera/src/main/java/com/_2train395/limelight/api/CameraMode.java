@@ -1,7 +1,7 @@
 package com._2train395.limelight.api;
 
 public enum CameraMode {
-    VISION_PROCESSING(0),
+    VISION_PROCESSOR(0),
     DRIVER_CAMERA(1);
 
     static final String KEY = "camMode";
