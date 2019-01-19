@@ -42,14 +42,14 @@ public class Target {
     }
 
     /**
-     * @return the horizontal offset from the crosshair to this target, ranging from -27 to 27 degrees
+     * @return the horizontal offset of the center of this target from the crosshair, ranging from -27 to 27 degrees
      */
     public double getXOffset() {
         return xOffset;
     }
 
     /**
-     * @return the vertical offset from the crosshair to this target, ranging from -20.5 to 20.5 degrees
+     * @return the vertical offset of the center of this target from the crosshair, ranging from -20.5 to 20.5 degrees
      */
     public double getYOffset() {
         return yOffset;
