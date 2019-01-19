@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents a vision target detected by Limelight through the current pipeline.
  */
-public class Target {
+public class Target implements Targetable {
     private static final String X_OFFSET_KEY = "tx";
     private static final String Y_OFFSET_KEY = "ty";
     private static final String AREA_KEY = "ta";
@@ -44,6 +44,7 @@ public class Target {
     /**
      * @return the horizontal offset of the center of this target from the crosshair, ranging from -27 to 27 degrees
      */
+    @Override
     public double getXOffset() {
         return xOffset;
     }
@@ -51,6 +52,7 @@ public class Target {
     /**
      * @return the vertical offset of the center of this target from the crosshair, ranging from -20.5 to 20.5 degrees
      */
+    @Override
     public double getYOffset() {
         return yOffset;
     }
@@ -58,6 +60,7 @@ public class Target {
     /**
      * @return the percentage of the image that this target (enclosed by its {@link FittedBoundingBox}) occupies, ranging from 0% to 100%
      */
+    @Override
     public double getArea() {
         return area;
     }
@@ -65,6 +68,7 @@ public class Target {
     /**
      * @return the skew of this target, ranging from -90 to 0 degrees
      */
+    @Override
     public double getSkew() {
         return skew;
     }

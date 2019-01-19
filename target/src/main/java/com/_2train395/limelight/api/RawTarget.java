@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents a vision target detected by Limelight through the current pipeline. Unlike a {@link Target}, a {@link RawTarget} is not identified in context of the current pipeline's grouping preferences.
  */
-public class RawTarget {
+public class RawTarget implements Targetable {
     private final RawTargetType rawTargetType;
     private final double xOffset;
     private final double yOffset;
@@ -44,6 +44,7 @@ public class RawTarget {
     /**
      * @return the horizontal offset of the center of this raw target from the crosshair, in normalized screen space (i.e., ranging from -1 to 1)
      */
+    @Override
     public double getXOffset() {
         return xOffset;
     }
@@ -51,6 +52,7 @@ public class RawTarget {
     /**
      * @return the vertical offset of the center of this raw target from the crosshair, in normalized screen space (i.e., ranging from -1 to 1)
      */
+    @Override
     public double getYOffset() {
         return yOffset;
     }
@@ -58,6 +60,7 @@ public class RawTarget {
     /**
      * @return the percentage of the image that this raw target occupies, ranging from 0% to 100%
      */
+    @Override
     public double getArea() {
         return area;
     }
@@ -65,6 +68,7 @@ public class RawTarget {
     /**
      * @return the skew of this raw target, ranging from -90 to 0 degrees
      */
+    @Override
     public double getSkew() {
         return skew;
     }
