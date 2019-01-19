@@ -1,5 +1,8 @@
 package com._2train395.limelight.api;
 
+/**
+ * Enumerates each {@link RawTarget}.
+ */
 public enum RawTargetType {
     FIRST(0),
     SECOND(1),
