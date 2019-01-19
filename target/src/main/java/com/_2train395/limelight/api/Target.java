@@ -13,14 +13,16 @@ public class Target {
     private final double yOffset;
     private final double area;
     private final double skew;
-    private final BoundingBox boundingBox;
+    private final FittedBoundingBox fittedBoundingBox;
+    private final RoughBoundingBox roughBoundingBox;
 
     Target() {
         xOffset = fetchXOffset();
         yOffset = fetchYOffset();
         area = fetchArea();
         skew = fetchSkew();
-        boundingBox = new BoundingBox();
+        fittedBoundingBox = new FittedBoundingBox();
+        roughBoundingBox = new RoughBoundingBox();
     }
 
     private double fetchXOffset() {
@@ -54,7 +56,7 @@ public class Target {
     }
 
     /**
-     * @return the percentage of the image that this target (enclosed by its {@link BoundingBox}) occupies, ranging from 0% to 100%
+     * @return the percentage of the image that this target (enclosed by its {@link FittedBoundingBox}) occupies, ranging from 0% to 100%
      */
     public double getArea() {
         return area;
@@ -68,9 +70,16 @@ public class Target {
     }
 
     /**
-     * @return this target's {@link BoundingBox}
+     * @return this target's {@link FittedBoundingBox}
      */
-    public BoundingBox getBoundingBox() {
-        return boundingBox;
+    public FittedBoundingBox getFittedBoundingBox() {
+        return fittedBoundingBox;
+    }
+
+    /**
+     * @return this target's {@link RoughBoundingBox}
+     */
+    public RoughBoundingBox getRoughBoundingBox() {
+        return roughBoundingBox;
     }
 }
