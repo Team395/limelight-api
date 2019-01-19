@@ -6,7 +6,7 @@ import edu.wpi.first.networktables.NetworkTableInstance;
 /**
  * Utility class for getting and setting data of the Limelight through NetworkTables.
  */
-public class Limelight {
+public final class Limelight {
     private static final String KEY = "limelight";
     private static final String HAS_TARGETS_KEY = "tv";
     private static final String LATENCY_KEY = "tl";
