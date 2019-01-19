@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the rough bounding box that Limelight places around a target. Unlike the {@link FittedBoundingBox}, this box is not rotated; its sides are parallel to the corresponding sides of the image.
  */
-public class RoughBoundingBox {
+public class RoughBoundingBox implements BoundingBox {
     private static final String HORIZONTAL_SIDE_LENGTH_KEY = "thoriz";
     private static final String VERTICAL_SIDE_LENGTH_KEY = "tvert";
 

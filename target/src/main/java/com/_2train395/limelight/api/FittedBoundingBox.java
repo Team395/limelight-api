@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the bounding box that Limelight fits around a target.
  */
-public class FittedBoundingBox {
+public class FittedBoundingBox implements BoundingBox {
     private static final String SHORTEST_SIDE_LENGTH_KEY = "tshort";
     private static final String LONGEST_SIDE_LENGTH_KEY = "tlong";
 
