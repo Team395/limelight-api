@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the Limelight's streaming mode, which takes effect if a second camera (e.g., a webcam) is connected to the Limelight.
  */
-public enum StreamMode {
+public enum StreamMode implements CameraSetting {
     /**
      * The primary and secondary camera streams are placed side by side.
      */

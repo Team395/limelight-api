@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the Limelight's LED state.
  */
-public enum LedMode {
+public enum LedMode implements CameraSetting {
     /**
      * Uses the LED mode set in the current pipeline.
      */

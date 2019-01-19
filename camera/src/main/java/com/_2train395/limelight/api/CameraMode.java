@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the Limelight's operation mode.
  */
-public enum CameraMode {
+public enum CameraMode implements CameraSetting {
     /**
      * Acts as a vision processor by decreasing exposure and enabling vision processing.
      */

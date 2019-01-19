@@ -3,7 +3,7 @@ package com._2train395.limelight.api;
 /**
  * Represents the Limelight's snapshot mode.
  */
-public enum SnapshotMode {
+public enum SnapshotMode implements CameraSetting {
     /**
      * Disables the capturing of snapshots.
      */
