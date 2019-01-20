@@ -1,5 +1,5 @@
 plugins {
-    id 'maven'
+    id 'maven-publish'
     id 'signing'
     id 'io.codearte.nexus-staging' version '0.20.0'
 }
@@ -50,60 +50,60 @@ task sourcesJar(type: Jar) {
     from sourceSets.main.allJava
 }
 
-artifacts {
-    archives javadocJar, sourcesJar
-}
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId archivesBaseName
+            from components.java
+            artifact javadocJar
+            artifact sourcesJar
 
-signing {
-    sign configurations.archives
-}
-
-uploadArchives {
-    repositories {
-        mavenDeployer {
-            beforeDeployment {
-                MavenDeployment deployment -> signing.signPom(deployment)
-            }
-
-            repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            snapshotRepository(url: 'https://oss.sonatype.org/content/repositories/snapshots/') {
-                authentication(userName: ossrhUsername, password: ossrhPassword)
-            }
-
-            pom.project {
-                name "$archivesBaseName"
-                packaging 'jar'
-                artifactId "$archivesBaseName"
-                description 'Unofficial API for the Limelight.'
-                url 'https://github.com/Team395/limelight-api'
+            pom {
+                name = archivesBaseName
+                description = 'Unofficial API for the Limelight.'
+                url = 'https://github.com/Team395/limelight-api'
 
                 scm {
-                    connection 'scm:https://github.com/Team395/limelight-api.git'
-                    developerConnection 'scm:https://github.com/Team395/limelight-api.git'
-                    url 'https://github.com/Team395/limelight-api'
+                    connection = 'scm:https://github.com/Team395/limelight-api.git'
+                    developerConnection = 'scm:https://github.com/Team395/limelight-api.git'
+                    url = 'https://github.com/Team395/limelight-api'
                 }
 
                 licenses {
                     license {
-                        name 'MIT License'
-                        url 'https://github.com/Team395/limelight-api/blob/master/LICENSE'
-                        distribution 'repo'
+                        name = 'MIT License'
+                        url = 'https://github.com/Team395/limelight-api/blob/master/LICENSE'
+                        distribution = 'repo'
                     }
                 }
 
                 developers {
                     developer {
-                        id 'ColeFrench'
-                        name 'Cole French'
-                        email '16979554+ColeFrench@users.noreply.github.com'
+                        id = 'ColeFrench'
+                        name = 'Cole French'
+                        email = '16979554+ColeFrench@users.noreply.github.com'
                     }
                 }
             }
         }
     }
+
+    repositories {
+        maven {
+            def releasesRepoUrl = 'https://oss.sonatype.org/service/local/staging/deploy/maven2/'
+            def snapshotsRepoUrl = 'https://oss.sonatype.org/content/repositories/snapshots/'
+            url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
+
+            credentials {
+                username = ossrhUsername
+                password = ossrhPassword
+            }
+        }
+    }
+}
+
+signing {
+    sign publishing.publications.mavenJava
 }
 
 nexusStaging {

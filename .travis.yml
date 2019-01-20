@@ -5,7 +5,7 @@ before_install:
   - tar xvzf secrets.tar.gz
   - chmod +x gradlew
 script:
-  - ./gradlew uploadArchives
+  - ./gradlew publish
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock
   - rm -fr $HOME/.gradle/caches/*/plugin-resolution/
