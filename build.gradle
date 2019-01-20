@@ -18,16 +18,16 @@ allprojects {
             url 'http://first.wpi.edu/FRC/roborio/maven/release/'
         }
     }
-
-    dependencies {
-        implementation 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
-    }
 }
 
 subprojects {
     dependencies {
         implementation rootProject
     }
+}
+
+dependencies {
+    api 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
 }
 
 sourceSets {
