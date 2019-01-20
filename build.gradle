@@ -95,8 +95,8 @@ publishing {
             url = version.endsWith('SNAPSHOT') ? snapshotsRepoUrl : releasesRepoUrl
 
             credentials {
-                username = ossrhUsername
-                password = ossrhPassword
+                username ossrhUsername
+                password ossrhPassword
             }
         }
     }
@@ -107,5 +107,7 @@ signing {
 }
 
 nexusStaging {
+    username ossrhUsername
+    password ossrhPassword
     packageGroup 'com.2train395'
 }
