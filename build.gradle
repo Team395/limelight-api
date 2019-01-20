@@ -37,12 +37,6 @@ sourceSets {
                 subproject -> srcDir("$subproject.projectDir.path/src/main/java")
             }
         }
-
-        resources {
-            subprojects.each {
-                subproject -> srcDir("$subproject.projectDir.path/src/main/resources")
-            }
-        }
     }
 }
 
@@ -53,7 +47,7 @@ task javadocJar(type: Jar) {
 
 task sourcesJar(type: Jar) {
     classifier 'sources'
-    from sourceSets.main.allSource
+    from sourceSets.main.allJava
 }
 
 artifacts {
