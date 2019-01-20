@@ -1,7 +1,7 @@
 if: tag IS present
 language: java
 before_install:
-  - openssl aes-256-cbc -K $encrypted_baedb2d3686e_key -iv $encrypted_baedb2d3686e_iv -in secrets.tar.gz.enc -out secrets.tar.gz -d
+  - openssl aes-256-cbc -K $encrypted_77c131577ec3_key -iv $encrypted_77c131577ec3_iv -in secrets.tar.gz.enc -out secrets.tar.gz -d
   - tar xvzf secrets.tar.gz
   - chmod +x gradlew
 script:
