@@ -277,3 +277,8 @@ gradle-app.setting
 **/build/
 
 # End of https://www.gitignore.io/api/java,linux,macos,gradle,windows,eclipse,intellij+all,visualstudiocode
+
+# Ignore sensitive files
+secrets.tar.gz
+secring.gpg
+gradle.properties
