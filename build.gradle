@@ -24,7 +24,13 @@ sourceSets {
     main {
         java {
             subprojects.each {
-                subproject -> srcDir(subproject.projectDir.path + '/src/main/java')
+                subproject -> srcDir("$subproject.projectDir.path/src/main/java")
+            }
+        }
+
+        resources {
+            subprojects.each {
+                subproject -> srcDir("$subproject.projectDir.path/src/main/resources")
             }
         }
     }
