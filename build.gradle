@@ -1,11 +1,12 @@
 plugins {
-    id 'java'
     id 'maven'
     id 'signing'
     id 'io.codearte.nexus-staging' version '0.20.0'
 }
 
 allprojects {
+    apply plugin: 'java-library'
+
     group 'com.2train395.limelight.api'
     version '0.1.0'
 
@@ -17,10 +18,16 @@ allprojects {
             url 'http://first.wpi.edu/FRC/roborio/maven/release/'
         }
     }
+
+    dependencies {
+        implementation 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
+    }
 }
 
-dependencies {
-    compile 'edu.wpi.first.ntcore:ntcore-java:2019.1.1'
+subprojects {
+    dependencies {
+        implementation rootProject
+    }
 }
 
 sourceSets {
