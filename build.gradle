@@ -8,7 +8,7 @@ allprojects {
     apply plugin: 'java-library'
 
     group 'com.2train395.limelight.api'
-    version '0.1.0'
+    version '1.0.0'
 
     sourceCompatibility = 1.8
 
