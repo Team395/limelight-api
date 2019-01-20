@@ -1,5 +1,8 @@
 plugins {
     id 'java'
+    id 'maven'
+    id 'signing'
+    id 'io.codearte.nexus-staging' version '0.20.0'
 }
 
 allprojects {
@@ -31,6 +34,72 @@ sourceSets {
         resources {
             subprojects.each {
                 subproject -> srcDir("$subproject.projectDir.path/src/main/resources")
+            }
+        }
+    }
+}
+
+task javadocJar(type: Jar) {
+    classifier 'javadoc'
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    classifier 'sources'
+    from sourceSets.main.allSource
+}
+
+artifacts {
+    archives javadocJar, sourcesJar
+}
+
+signing {
+    sign configurations.archives
+}
+
+uploadArchives {
+    repositories {
+        mavenDeployer {
+            beforeDeployment {
+                MavenDeployment deployment -> signing.signPom(deployment)
+            }
+
+            repository(url: 'https://oss.sonatype.org/service/local/staging/deploy/maven2/') {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            snapshotRepository(url: 'https://oss.sonatype.org/content/repositories/snapshots/') {
+                authentication(userName: ossrhUsername, password: ossrhPassword)
+            }
+
+            pom.project {
+                name "$archivesBaseName"
+                packaging 'jar'
+                artifactId "$archivesBaseName"
+                description 'Unofficial API for the Limelight.'
+                url 'https://github.com/Team395/limelight-api'
+
+                scm {
+                    connection 'scm:https://github.com/Team395/limelight-api.git'
+                    developerConnection 'scm:https://github.com/Team395/limelight-api.git'
+                    url 'https://github.com/Team395/limelight-api'
+                }
+
+                licenses {
+                    license {
+                        name 'MIT License'
+                        url 'https://github.com/Team395/limelight-api/blob/master/LICENSE'
+                        distribution 'repo'
+                    }
+                }
+
+                developers {
+                    developer {
+                        id 'ColeFrench'
+                        name 'Cole French'
+                        email '16979554+ColeFrench@users.noreply.github.com'
+                    }
+                }
             }
         }
     }
