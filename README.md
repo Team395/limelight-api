@@ -3,7 +3,7 @@ Unofficial API for the Limelight.
 ## Building
 Clone the repository and then run `./gradlew build`.
 ## Adding the Dependency
-Copy the built jar into a directory and then add `compile files('relative/path/to/limelight-api-version.jar')` to your Gradle dependencies.
+Add `compile 'com.2train395.limelight.api:limelight-api:1.0.0'` to your Gradle dependencies. Make sure `mavenCentral()` is added as a repository.
 ## Using the API
 The `Limelight` class provides static methods to access all data posted to NetworkTables by Limelight.
 ### Examples
