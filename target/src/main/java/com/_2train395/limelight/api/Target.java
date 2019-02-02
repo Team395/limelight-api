@@ -15,6 +15,7 @@ public class Target implements Targetable {
     private final double skew;
     private final FittedBoundingBox fittedBoundingBox;
     private final RoughBoundingBox roughBoundingBox;
+    private final Corners corners;
 
     Target() {
         xOffset = fetchXOffset();
@@ -23,6 +24,7 @@ public class Target implements Targetable {
         skew = fetchSkew();
         fittedBoundingBox = new FittedBoundingBox();
         roughBoundingBox = new RoughBoundingBox();
+        corners = new Corners();
     }
 
     private double fetchXOffset() {
@@ -85,5 +87,12 @@ public class Target implements Targetable {
      */
     public RoughBoundingBox getRoughBoundingBox() {
         return roughBoundingBox;
+    }
+
+    /**
+     * @return this target's {@link Corners}
+     */
+    public Corners getCorners() {
+        return corners;
     }
 }
